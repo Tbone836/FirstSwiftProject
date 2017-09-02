@@ -22,10 +22,80 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func actionButton(_ sender: Any) {
         if let actionText = action.text?.lowercased(){
-            if actionText == "addition"{
-                answer.text = "\("Double(number1) + Double(number2))"
+            switch actionText{
+            case "addition":
+                addAction()
+            case "subtraction":
+                subAction()
+            case "multiplication":
+                multipAction()
+            case "division":
+                divideAction()
+            default:
+                answer.text = "You spelled the action wrong or put a non-number in the number field"
+            
             }
     }
+    }
+    func setAnswerText(solution: Double) {
+        answer.text = "\(solution)"
+    }
+    
+    func addAction() {
+        if let num1 = number1.text, let num2 = number2.text {
+            
+            let num1Double = Double(num1)
+            let num2Double = Double(num2)
+            
+            if let num1Double = num1Double, let num2Double = num2Double {
+                
+                let solution = num1Double + num2Double
+                setAnswerText(solution: solution)
+            }
+            
+        }
+    }
+    func subAction() {
+        if let num1 = number1.text, let num2 = number2.text {
+            
+            let num1Double = Double(num1)
+            let num2Double = Double(num2)
+            
+            if let num1Double = num1Double, let num2Double = num2Double {
+                
+                let solution = num1Double - num2Double
+                setAnswerText(solution: solution)
+            }
+            
+        }
+    }
+    func multipAction() {
+        if let num1 = number1.text, let num2 = number2.text {
+            
+            let num1Double = Double(num1)
+            let num2Double = Double(num2)
+            
+            if let num1Double = num1Double, let num2Double = num2Double {
+                
+                let solution = num1Double * num2Double
+                setAnswerText(solution: solution)
+            }
+            
+        }
+    }
+    func divideAction() {
+        if let num1 = number1.text, let num2 = number2.text {
+            
+            let num1Double = Double(num1)
+            let num2Double = Double(num2)
+            
+            if let num1Double = num1Double, let num2Double = num2Double {
+                
+                let solution = num1Double / num2Double
+                setAnswerText(solution: solution)
+            }
+            
+        }
     }
     
     override func viewDidLoad() {
