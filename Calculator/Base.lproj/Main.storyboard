@@ -55,8 +55,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm6-aB-jdB">
+                                <rect key="frame" x="165" y="550" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="myr-fi-zXG" kind="show" id="1hR-Jy-n8o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="sfm-Gi-rJF" firstAttribute="centerX" secondItem="EiJ-N0-Gfm" secondAttribute="centerX" id="1nS-G6-R6D"/>
                             <constraint firstItem="8b3-7F-gpz" firstAttribute="top" secondItem="fkI-pH-C7b" secondAttribute="bottom" constant="8" symbolic="YES" id="5vg-c2-rN5"/>
@@ -74,6 +83,9 @@
                             <constraint firstItem="d9f-GB-Qci" firstAttribute="trailing" secondItem="sfm-Gi-rJF" secondAttribute="trailing" id="nIn-sJ-x91"/>
                             <constraint firstItem="8b3-7F-gpz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rz9-6h-ePN"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ziD-gU-Fjy" appends="YES" id="Sgk-ev-3UU"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="action" destination="sfm-Gi-rJF" id="rhx-fo-fpl"/>
@@ -83,8 +95,31 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ziD-gU-Fjy">
+                    <connections>
+                        <action selector="backgroundButtonForDisappearingKeyboard:" destination="BYZ-38-t0r" id="KcD-6a-6BR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="103" y="143"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vpm-cu-MRd">
+            <objects>
+                <viewController id="myr-fi-zXG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NyL-Aa-0aX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ytC-D4-1q9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y06-MS-GiQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0YU-tI-EgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895" y="143"/>
         </scene>
     </scenes>
 </document>

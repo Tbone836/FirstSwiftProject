@@ -19,6 +19,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var answer: UILabel!
 
+    @IBAction func backgroundButtonForDisappearingKeyboard(_ sender: Any) {
+    
+        view.endEditing(true)
+        
+        
+    }
 
     @IBAction func actionButton(_ sender: Any) {
         if let actionText = action.text?.lowercased(){
@@ -97,10 +103,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        if number1.text != "" && number2.text != "" && action.text != "" {
+            actionButton(textField)
+        }
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        number1.delegate = self
+        number2.delegate = self
+        action.delegate = self
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
